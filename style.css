@@ -339,7 +339,7 @@ li a:hover {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    background-image: url(./IMG/apresentation-back.jpg);
+    background-image: url('./IMG/apresentation-back.jpg');
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
