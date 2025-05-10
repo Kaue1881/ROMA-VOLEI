@@ -1,0 +1,490 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::root {
+  --text-color: #fafaff;
+  --dark-back: #080807;
+  --purple: #2c0e37;
+  --light-purple: #690375;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+nav {
+  background-color: #fafaff;
+  display: grid;
+  grid-template-rows: auto;
+  align-items: center;
+  grid-template-columns: 100px repeat(2, auto);
+  padding: 20px 60px;
+  justify-content: space-between;
+  box-shadow: 0px -10px 3em black;
+}
+
+nav img {
+  max-width: 100%;
+  width: 60px;
+}
+
+nav .burguer-mobile {
+  display: none;
+}
+
+nav ul {
+  grid-column: 3;
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  padding: 20px 30px;
+  color: #080807;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-bottom: 3px solid #080807;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+li a:hover {
+  background-color: #2c2c2c;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  color: white;
+}
+
+.main-content {
+  margin-top: 15vh;
+}
+
+.apresentation {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-image: url(../IMG/apresentation-back.jpg);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  position: relative;
+  padding-top: 130px;
+  padding-left: 100px;
+}
+
+.apresentation::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(87, 199, 133, 0) 100%,
+    rgba(237, 221, 83, 1) 100%
+  );
+}
+
+.apresentation article {
+  z-index: 4;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  gap: 20px;
+  position: relative;
+}
+
+.apresentation article::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  background-color: white;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: -15px;
+}
+
+.apresentation h1 {
+  font-size: 4rem;
+}
+
+.apresentation button {
+  color: white;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px 50px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.apresentation button:hover {
+  background-color: white;
+  color: #000000;
+}
+
+.sobre {
+  height: 40vh;
+}
+
+.sobre article {
+  padding: 50px;
+}
+
+.sobre-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  justify-content: center;
+  align-items: center;
+  gap: 10px 10px;
+  padding: 30px 0;
+  width: 100vw;
+}
+
+.sobre-content p {
+  grid-column: 1;
+  text-align: justify;
+  margin-left: 30px;
+  position: relative;
+  align-self: flex-start;
+}
+
+.sobre-content > p ::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 4px;
+  background-color: #690375;
+  position: absolute;
+  top: 0;
+  left: -20px;
+}
+
+.sobre-content div {
+  grid-column: 2;
+  justify-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#sobre h2 {
+  font-size: 3rem;
+  color: #690375;
+  position: relative;
+  margin-left: 10%;
+}
+
+#sobre h2::before {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 15px;
+  background-color: #690375;
+  position: absolute;
+  left: -8vw;
+  top: 20px;
+}
+
+.sobre-content strong {
+  font-weight: normal;
+  color: #690375;
+}
+
+.sobre-content a {
+  text-decoration: none;
+}
+
+.sobre-content a:visited {
+  color: rgb(103, 132, 156);
+}
+
+.sbr-img1 {
+  grid-row: 1;
+}
+
+.sbr-img2 {
+  grid-row: 2;
+}
+
+.sbr-img3 {
+  grid-row: 3;
+}
+
+.sobre-img img {
+  width: 400px;
+  object-fit: cover;
+  height: 200px;
+  grid-column: 2;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.sobre-img span {
+  color: #690375;
+  padding: 10px 10px 10px 0;
+  background-color: #690375;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+}
+
+@media (max-width: 814px) {
+  header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  nav {
+    background-color: #fafaff;
+    display: grid;
+    grid-template-rows: auto;
+    align-items: center;
+    grid-template-rows: 80px repeat(3, auto);
+    grid-template-columns: none;
+    padding: 0;
+    margin: 0;
+    justify-content: start;
+    box-shadow: 0px -10px 3em black;
+    position: relative;
+    min-width: 100vw;
+  }
+
+  nav img {
+    max-width: 100%;
+    width: 60px;
+    margin: 0 0 0 20px;
+  }
+
+  .burguer-mobile {
+    content: "";
+    cursor: pointer;
+    display: inline-block !important;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 26px;
+    right: 7vw;
+    background-image: url(../IMG/row.png);
+    background-position: center center;
+    background-size: cover;
+  }
+
+  nav ul {
+    grid-column: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    list-style: none;
+    margin-top: 30px;
+    gap: 0 !important;
+    display: none;
+    min-width: 100vw;
+    grid-row: 2 / 4;
+    position: relative;
+    animation: ulAppear 0.3s ease-in-out;
+  }
+  nav ul li a {
+    padding: 0;
+    width: 120vw;
+    min-height: 40px;
+    padding: 20px 10px;
+    display: inline-block;
+    min-height: 100%;
+  }
+  .main-content {
+    margin-top: 9vh;
+  }
+
+  .apresentation {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-image: url(../IMG/apresentation-back.jpg);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+    padding: 0;
+    justify-content: none;
+    align-items: none;
+  }
+
+  .apresentation article {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    bottom: 20px;
+    background-color: #6a037527;
+  }
+
+  .apresentation article::before {
+    content: "";
+    display: none;
+    width: 4px;
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: -15px;
+  }
+
+  .apresentation article h1 {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  .apresentation article button {
+    font-size: 1.2rem;
+    background-color: #6a03753b;
+  }
+
+  .sobre-content {
+    display: grid;
+    grid-template-columns: calc(100% - 40px);
+    grid-template-rows: repeat(6, auto);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    gap: 10px 10px;
+    margin: 0 !important;
+    width: 100vw !important;
+  }
+
+  .sobre article {
+    padding: 0;
+  }
+  #sobre h2 {
+    margin: 20px 0 0 15px;
+  }
+
+  #sobre h2::before {
+    display: none;
+  }
+
+  .sobre-content p {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .sobre-content > p ::before {
+  display: none;
+
+}
+
+
+  .sobre-paragrafo-1 {
+    grid-row: 1;
+  }
+  .sobre-paragrafo-2 {
+    grid-row: 3;
+  }
+  .sobre-paragrafo-3 {
+    grid-row: 5;
+  }
+
+  .sbr-img1 {
+    grid-row: 2;
+    grid-column: auto;
+  }
+
+  .sbr-img2 {
+    grid-row: 4;
+    grid-column: auto;
+  }
+
+  .sbr-img3 {
+    grid-row: 6;
+    grid-column: auto;
+  }
+  .sobre-content div {
+    grid-column: auto;
+  }
+  .sobre-img img {
+    width: 90vw;
+    object-fit: cover;
+    height: 400px;
+    grid-column: 2;
+    position: relative;
+    margin-bottom: 30px;
+  }
+}
+
+@keyframes aAppear {
+  0% {
+    opacity: 0;
+    max-height: 0%;
+    overflow: hidden;
+  }
+
+  50% {
+    max-height: 50%;
+  }
+
+  100% {
+    opacity: 1;
+    max-height: 100%;
+    overflow: visible;
+  }
+}
+
+@keyframes ulAppear {
+  from {
+    background-color: transparent;
+    position: relative;
+    opacity: 0;
+    left: -100vw;
+  }
+
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
