@@ -1,6 +1,7 @@
 // scroll da paginaY
 const VerMais = document.querySelector(".VerMais");
 const btnSobre = document.querySelector(".sobreLink");
+const btnElenco = document.querySelector(".elencoLink");
 
 btnSobre.addEventListener("click", function () {
   window.scrollTo({ top: 650, behavior: "smooth" });
@@ -10,6 +11,9 @@ VerMais.addEventListener("click", function () {
   window.scrollTo({ top: 650, behavior: "smooth" });
 });
 
+btnElenco.addEventListener("click", function () {
+  window.scrollTo({ top: 1680, behavior: "smooth" });
+});
 // navegação
 const burguer = document.querySelector("#burguer-mobile");
 const ul = document.querySelector("#lista");
