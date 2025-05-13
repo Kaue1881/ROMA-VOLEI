@@ -13,14 +13,17 @@
         <img src="./IMG/roma logo.png" alt="Logo Roma" />
         <div class="burguer-mobile closed" id="burguer-mobile"></div>
         <ul id="lista">
-          <li aria-label="Sobre"><a class="sobreLink">Sobre</a></li>
-          <li aria-label="Elenco"><a class="elencoLink">Elenco</a></li>
-          <li aria-label="Conquistas"><a>Conquistas</a></li>
+          <li aria-label="Sobre"><a class="navLink" href="#sobre">Sobre</a></li>
+          <li aria-label="Elenco"><a class="navLink" href="#elenco">Elenco</a></li>
+          <li aria-label="Conquistas"><a class="navLink" href="#">Conquistas</a></li>
           <!-- <li aria-label="frase"><a href="#">frase</a></li> -->
         </ul>
       </nav>
     </header>
     <main class="main-content">
+      <span class="subir">
+        <img src="./IMG/upload.png" alt="Subir ao topo da página" title="Voltar ao topo">
+      </span>
       <div class="apresentation">
         <article>
           <h1>ROMA - VÔLEI</h1>
@@ -28,7 +31,7 @@
             Um time de vôlei que conta com um elenco de diversas partes de São
             Paulo.
           </p>
-          <button class="VerMais">Ver Mais</button>
+          <button class="VerMais" title="Ver Mais">Ver Mais</button>
         </article>
       </div>
 
@@ -42,7 +45,7 @@
               que hoje conquista o coração de muitos atletas e amantes do
               esporte, começou assim, <strong>pequeno</strong>. Com um pequeno
               grupo de amigos da
-              <a href="https://acmsaopaulo.org.br/unidades/unidade-centro/"
+              <a title="ACM Centro: https://acmsaopaulo.org.br/unidades/unidade-centro/" href="https://acmsaopaulo.org.br/unidades/unidade-centro/"
                 >ACM Centro</a
               >
               formando o ROMA. Um time verdadeiro, sem máscara, e com um único
@@ -96,13 +99,23 @@
         </article>
       </div>
 
-      <div class="elenco">
+      <div class="elenco" id="elenco">
         <header class="header-elenco">
           <h2>Elenco</h2>
-          <div class="filter">filter</div>
+          <div class="filter">
+            <label for="jogadores">Filtre por posição:</label>
+            <select list="jogadores" id="jogadores" required>
+              <option value="todos">Selecione uma posição</option>
+              <option value="Levantador">Levantador</option>
+              <option value="Oposto">Oposto</option>
+              <option value="Ponteiro">Ponteiro</option>
+              <option value="Central">Central</option>
+              <option value="Libero">Libero</option>
+              </select>
+          </div>
         </header>
         <div class="content-elenco">
-          <div class="levantador player-box">
+          <div class="levantador player-box" data-posicao="Levantador">
             <h3>Levantadores</h3>
             <hr>
             <div class="levantador-content player-content">
@@ -136,7 +149,7 @@
               </span>
             </div>
           </div>
-          <div class="oposto player-box">
+          <div class="oposto player-box" data-posicao="Oposto">
             <h3>Opostos</h3>
             <hr>
             <div class="oposto-content player-content">
@@ -149,7 +162,7 @@
               </span>
             </div>
           </div>
-          <div class="ponteiros player-box">
+          <div class="ponteiros player-box" data-posicao="Ponteiro">
             <h3>Ponteiros</h3>
             <hr>
             <div class="ponteiros-content player-content">
@@ -162,7 +175,7 @@
               </span>
             </div>
           </div>
-          <div class="central player-box">
+          <div class="central player-box" data-posicao="Central">
             <h3>Centrais</h3>
             <hr>
             <div class="central-content player-content">
@@ -175,7 +188,7 @@
               </span>
             </div>
           </div>
-          <div class="libero player-box">
+          <div class="libero player-box" data-posicao="Libero">
             <h3>Líberos</h3>
             <hr>
             <div class="libero-content player-content">

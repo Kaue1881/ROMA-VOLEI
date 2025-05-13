@@ -42,6 +42,7 @@ nav {
   padding: 20px 60px;
   justify-content: space-between;
   box-shadow: 0px -10px 3em black;
+  height: 100px;
 }
 
 nav img {
@@ -82,7 +83,30 @@ li a:hover {
 
 .main-content {
   margin-top: 15vh;
-  width: 100vw;
+  width: 100%;
+}
+
+.subir{
+  /* display: block; */
+  display: none;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  left: 50px;
+  z-index: 10;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.432);
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+.subir img{
+  max-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
 }
 
 .apresentation {
@@ -162,6 +186,7 @@ li a:hover {
 .sobre {
   height: auto;
   grid-area: sobre;
+  scroll-margin-top: 100px;
 }
 
 .sobre article {
@@ -230,26 +255,22 @@ h2::before {
   text-decoration: none;
 }
 
+.sobre-content a:hover {
+  text-decoration: underline;
+}
+
 .sobre-content a:visited {
   color: rgb(103, 132, 156);
 }
 
-.sbr-img1 {
-  grid-row: 1;
-}
-
-.sbr-img2 {
-  grid-row: 2;
-}
-
-.sbr-img3 {
-  grid-row: 3;
+.sobre-img{
+  width: 100%;
 }
 
 .sobre-img img {
-  width: 400px;
+  min-width: 100%;
   object-fit: cover;
-  height: 200px;
+  height: 300px;
   grid-column: 2;
   position: relative;
   margin-bottom: 30px;
@@ -269,27 +290,43 @@ h2::before {
   text-align: right;
 }
 
+.sbr-img1 {
+  grid-row: 1;
+}
+
+.sbr-img2 {
+  grid-row: 2;
+}
+
+
+
+.sbr-img3 {
+  grid-row: 3;
+}
+
 .elenco{
   grid-area: elenco;
   display: block;
-  width: 100vw;
   height: auto;
   grid-row: 3;
   background-color: #080807;
   color: white;
+  scroll-margin-top: 100px;
 }
 
 .elenco header{
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem 1rem 0;
+  padding: 2rem;
+  padding-right: 100px;
   align-items: center;
   position: relative;
 }
 
 .elenco header h2{
-  margin-left: 10%;
+  color: white;
+  margin: 0;
 }
 
 .content-elenco{
@@ -297,6 +334,10 @@ h2::before {
   flex-flow: column nowrap;
   gap: 60px;
   padding: 1.5rem;
+}
+
+.content-elenco h3{
+  font-size: 2rem;
 }
 
 .player-box{
@@ -312,7 +353,7 @@ h2::before {
 }
 
 .player-card{
-  max-width: 23vw;
+  max-width: 23%;
   min-width: 200px;
   height: 400px;
   border: 1px solid white;
@@ -325,6 +366,7 @@ h2::before {
   text-align: center;
   transition: 0.2s;
   cursor: pointer;
+  position: relative;
 }
 
 .player-card:hover{
@@ -332,7 +374,8 @@ h2::before {
 }
 
 .player-content img{
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
   overflow: hidden;
   object-fit: cover;
   object-position: center top;
@@ -340,15 +383,17 @@ h2::before {
 
 
 .player-info{
-  background-color: #fafaff;
-  color: #080807;
+  background-color: #f00a903d;
+  backdrop-filter: blur(4px);
+  color: #ffffff;
   width: 100%;
-  height: 100px;
-  padding: 10px;
+  padding: 10px 0 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: absolute;
+  bottom: 0;
 }
 
 .player-info h4{
@@ -359,9 +404,28 @@ h2::before {
   font-size: 0.9rem;
 }
 
+.filter select{
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.filter select option{
+  background-color: #000000;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.filter select:focus{
+  outline: none;
+}
 
 
-@media (max-width: 814px) {
+
+@media (max-width: 886px) {
   .header-primario{
     position: fixed;
     z-index: 10;
@@ -383,6 +447,7 @@ h2::before {
     box-shadow: 0px -10px 3em black;
     position: relative;
     min-width: 100vw;
+    height: auto;
   }
 
   nav img {
@@ -492,6 +557,7 @@ h2::before {
     gap: 10px 10px;
     margin: 0 !important;
     width: 100vw !important;
+    padding: 0 1.8rem;
   }
 
   .sobre article {
@@ -507,7 +573,7 @@ h2::before {
 
   .sobre-content p {
     max-width: 100%;
-    margin: 0;
+    margin: 20px 0;
   }
 
   .sobre-content > p ::before {
@@ -555,6 +621,29 @@ h2::before {
     display: none;
   }
 
+  .header-elenco{
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0;
+    align-items: start !important;
+    justify-content: start !important;
+    gap: 20px;
+  }
+
+  .filter{
+    display: grid;
+    gap: 10px;
+  }
+  .filter select{
+    background-color: #6a03753d;
+    border-radius: 10px 10px 0 0  ;
+    padding: 10px;
+  }
+
+  .header-elenco h2{
+    margin: 0;
+  }
+
   .player-content{
     display: grid;
     grid-template-columns: 1fr;
@@ -595,5 +684,12 @@ h2::before {
   to {
     opacity: 1;
     left: 0;
+  }
+}
+
+
+@media (max-width: 814px){
+  .sobre-content{
+    padding: 0;
   }
 }
