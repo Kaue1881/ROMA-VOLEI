@@ -356,7 +356,7 @@ h2::before {
 
 .player-card{
   min-width: 200px;
-  min-height: 400px;
+  min-height: 300px;
   border: 1px solid white;
   border-radius: 20px;
   display: flex;
@@ -376,7 +376,7 @@ h2::before {
 }
 
 .player-content img{
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
   object-fit: cover;
   object-position: center top;
